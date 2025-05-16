@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IB Biology Feedback Assistant</title>
+  <style>
+    #chat { height: 400px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; }
+    input, button { margin-top: 10px; width: 100%; }
+  </style>
+</head>
+<body>
+  <h2>Ask for Feedback</h2>
+  <div id="chat"></div>
+  <input type="text" id="input" placeholder="Ask a question about your lab work..." />
+  <button onclick="sendMessage()">Send</button>
+
+  <script>
+    const chatDiv = document.getElementById('chat');
+
+    function appendMessage(sender, message) {
+      chatDiv.innerHTML += `<p><strong>${sender}:</strong> ${message}</p>`;
+      chatDiv.scrollTop = chatDiv.scrollHeight;
+    }
+
+    async function sendMessage() {
+      const inputField = document.getElementById('input');
+      const message = inputField.value;
+      if (!message) return;
+      appendMessage("You", message);
+      inputField.value = "";
+
+      const response = await fetch("/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await response.json();
+      appendMessage("Bot", data.reply);
+    }
+  </script>
+</body>
+</html>

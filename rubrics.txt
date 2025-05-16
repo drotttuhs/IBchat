@@ -1,0 +1,24 @@
+
+exploration:
+  - Research question is focused and relevant
+  - Background information is cited and scientifically accurate
+  - Methodology directly addresses the research question
+  - Variables and controls are clearly defined and justified
+
+analysis:
+  - Raw data is sufficient and presented clearly
+  - Appropriate statistics are used (mean, SD, SEM, t-test)
+  - Measurement uncertainties are acknowledged and incorporated
+  - Data is interpreted in context of the hypothesis
+
+evaluation:
+  - Conclusion is supported by the data and answers the research question
+  - Compared to accepted scientific context
+  - Weaknesses and methodological limitations are analyzed
+  - Improvements and extensions are suggested
+
+communication:
+  - Report is well-structured and easy to follow
+  - Appropriate scientific terminology is used correctly
+  - Tables and graphs include units and uncertainties
+  - Citations are correctly formatted
